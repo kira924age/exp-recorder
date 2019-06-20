@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom'
 import ResponsiveDrawer from './ResponsiveDrawer'
 import ViewRecord from './ViewRecord'
+import AddRecord from './AddRecord'
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Route exact path='/' component={Home} />
-          <Route path='/resister' component={Resister} />
+          <Route path='/resister' component={AddRecord} />
           <Route path='/record' component={ViewRecord} />
         </div>
       </BrowserRouter>
@@ -22,14 +23,6 @@ class Home extends Component {
   render() {
     return (
       <ResponsiveDrawer element='You are in home!' />
-    );
-  }
-}
-
-class Resister extends Component {
-  render() {
-    return (
-      <ResponsiveDrawer element='You are in resister!' />
     );
   }
 }

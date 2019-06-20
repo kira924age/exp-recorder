@@ -13,6 +13,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
+import SvgIcon from '@material-ui/core/SvgIcon';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -26,8 +27,8 @@ const styles = theme => ({
   },
   drawer: {
     [theme.breakpoints.up('lg')]: {
-      width: drawerWidth,  // この幅の横に、mainがレイアウトされる。
-      flexShrink: 0,   // !!! これが無いと main が Drawer の下に入り込んでしまう
+      width: drawerWidth,
+      flexShrink: 0,
     },
   },
   appBar: {
@@ -44,11 +45,9 @@ const styles = theme => ({
   },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width: drawerWidth,   // drawer.widthに合わせないと無駄な空白ができる
+    width: drawerWidth,
   },
   content: {
-    // marginLeftでappBarに合わせると画面幅を小さくすると無駄な空白ができる。
-    // marginLeft: drawerWidth,  // drawer.flexShrink: 0 を使う
     flexGrow: 1,
     // padding: theme.spacing.unit * 3,
     padding: theme.spacing(3),
@@ -69,7 +68,6 @@ class ResponsiveDrawer extends React.Component {
     const { classes, theme } = this.props;
     const drawer = (
       <div>
-        {/*<div className={classes.toolbar} />*/}
         <div style={{ margin : 8 }}>
           <Typography variant="h5" style={{ color: "gray" }}>
             exp-recorder
@@ -111,10 +109,18 @@ class ResponsiveDrawer extends React.Component {
               exp-recoder App
               </Link>
             </Typography>
+
+            <IconButton aria-label="Github icon" style={{ marginLeft: "auto" }} >
+              <a href="https://github.com/kira924age/exp-recorder">
+              <SvgIcon>
+                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3" />
+              </SvgIcon>
+              </a>
+            </IconButton>
+
           </Toolbar>
         </AppBar>
         <nav className={classes.drawer}>
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
           <Hidden lgUp implementation="css">
             <Drawer
               container={this.props.container}
