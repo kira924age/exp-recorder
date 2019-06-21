@@ -6,7 +6,13 @@
 
 Django REST framework を使って実装.
 
-### `GET /api/money_record` で出費の一覧を取得
+### 出費の一覧を取得
+
+- Request
+
+```
+GET /api/money_record
+```
 
 - Response
 
@@ -41,6 +47,23 @@ Django REST framework を使って実装.
         "category": "飲食料"
     }
 ]
+```
+
+### 出費を追加
+
+- Request
+
+```
+POST /api/money_record
+Content-type: application/json
+
+{"name":"debug", "price":"100", "category": "debug"}
+```
+
+- Response
+
+```
+{"id":10,"name":"debug","price":100.0,"created_at":"2019-06-21T06:34:01.561747Z","category":"debug"}
 ```
 
 ## CLI
