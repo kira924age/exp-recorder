@@ -4,6 +4,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
+import NativeSelect from '@material-ui/core/NativeSelect';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 class InputForm extends React.Component {
   constructor(props) {
@@ -83,18 +86,29 @@ class InputForm extends React.Component {
           onChange={this.handleChange}
         />
         <br />
-        <TextField
-          required
-          label="Category"
-          helperText="Enter Category"
-          fullWidth
-          type="text"
-          name="category"
-          value={this.state.category}
-          onChange={this.handleChange}
+        <FormControl fullWidth={true} >
+          <NativeSelect
+            native
+            required
+            name='category'
+            value={this.state.category}
+           onChange={this.handleChange}
           margin="normal"
-          variant="outlined"
-        />
+        >
+          <option value={""}></option>
+          <option value={"食費"}>食費</option>
+          <option value={"日用品"}>日用品</option>
+          <option value={"公共料金"}>公共料金</option>
+          <option value={"趣味"}>趣味</option>
+          <option value={"学習"}>学習</option>
+          <option value={"通信費"}>通信費</option>
+          <option value={"交通費"}>交通費</option>
+          <option value={"その他"}>その他</option>
+        </NativeSelect>
+      <FormHelperText>Select category.</FormHelperText>
+      </FormControl>
+ 
+        <br />
         <br />
 
         <Button variant="contained" color="primary" type="submit" value="Submit" >
