@@ -19,31 +19,38 @@ GET /api/money_record
 ```
 [
     {
-        "id": 2,
-        "name": "ファミチキ",
-        "price": 180.0,
-        "created_at": "2019-06-18T15:31:35.268342Z",
-        "category": "飲食料"
+        "id": 22,
+        "name": "フランクロール",
+        "price": 165.0,
+        "created_at": "2019/06/22 11:20:55",
+        "category": "食費"
     },
     {
-        "id": 4,
-        "name": "なか卯カツ丼大盛",
-        "price": 650.0,
-        "created_at": "2019-06-19T00:40:36.012571Z",
-        "category": "飲食料"
+        "id": 20,
+        "name": "電気代",
+        "price": 5731.0,
+        "created_at": "2019/06/22 01:53:34",
+        "category": "公共料金"
     },
     {
-        "id": 6,
-        "name": "チキンカツバーガー",
-        "price": 118.0,
-        "created_at": "2019-06-19T09:28:13.226240Z",
-        "category": "飲食料"
+        "id": 19,
+        "name": "カツとじ定食",
+        "price": 1000.0,
+        "created_at": "2019/06/21 23:39:55",
+        "category": "食費"
     },
     {
         "id": 8,
         "name": "9番小辛",
         "price": 590.0,
-        "created_at": "2019-06-19T11:06:14.801915Z",
+        "created_at": "2019/06/19 20:06:14",
+        "category": "飲食料"
+    },
+    {
+        "id": 2,
+        "name": "ファミチキ",
+        "price": 180.0,
+        "created_at": "2019/06/19 00:31:35",
         "category": "飲食料"
     }
 ]
@@ -64,6 +71,43 @@ Content-type: application/json
 
 ```
 {"id":10,"name":"debug","price":100.0,"created_at":"2019-06-21T06:34:01.561747Z","category":"debug"}
+```
+
+## 出費の詳細を取得
+
+- Request
+
+```
+GET /api/detail/20
+```
+
+- Response
+
+```
+{
+    "id": 20,
+    "name": "電気代",
+    "price": 5731.0,
+    "created_at": "2019/06/22 01:53:34",
+    "category": "公共料金"
+}
+```
+
+## 出費の情報を削除
+
+- Request
+
+```
+DELETE /api/detail/7
+```
+
+- Response
+
+```
+HTTP 204 No Content
+Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
 ```
 
 ## CLI
