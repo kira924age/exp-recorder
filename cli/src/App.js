@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom'
-import ResponsiveDrawer from './ResponsiveDrawer'
 import ViewRecord from './ViewRecord'
 import AddRecord from './AddRecord'
+import DetailRecord from './DetailRecord'
+import Home from './Home'
 
 class App extends Component {
   render() {
@@ -13,16 +14,9 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/resister' component={AddRecord} />
           <Route path='/record' component={ViewRecord} />
+          <Route path='/detail/:id(\d+)' component={DetailRecord} />
         </div>
       </BrowserRouter>
-    );
-  }
-}
-
-class Home extends Component {
-  render() {
-    return (
-      <ResponsiveDrawer element='You are in home!' />
     );
   }
 }

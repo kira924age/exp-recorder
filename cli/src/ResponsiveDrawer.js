@@ -11,8 +11,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
+import EditIcon from '@material-ui/icons/Edit';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -49,7 +49,6 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
-    // padding: theme.spacing.unit * 3,
     padding: theme.spacing(3),
   },
 });
@@ -73,19 +72,29 @@ class ResponsiveDrawer extends React.Component {
             exp-recorder
           </Typography>
           <Typography variant="caption" display="block" gutterBottom>
-            v0.2.1
+            v0.0.1
           </Typography>
         </div>
         <Divider />
         <List>
-          {['Resister', 'Record'].map((text, index) => (
-            <Link to={text} style={{ textDecoration: "none" }}>
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+          <Link to='/Resister' style={{ textDecoration: "none" }}>
+            <ListItem button key='Resister'>
+              <ListItemIcon>
+                <EditIcon />
+              </ListItemIcon>
+              <ListItemText primary='Resister' />
             </ListItem>
-            </Link>
-          ))}
+          </Link>
+
+          <Link to='/Record' style={{ textDecoration: "none" }}>
+            <ListItem button key='Record'>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary='Record' />
+            </ListItem>
+          </Link>
+
         </List>
         <Divider />
       </div>
