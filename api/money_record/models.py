@@ -1,10 +1,11 @@
 from django.db import models
+from datetime import datetime
 
 class Money_record(models.Model):
     name = models.CharField(max_length=100)
     price = models.FloatField( default=0 )
     created_at = models.DateTimeField(
-        auto_now_add = True,
+        auto_now_add=True
     )
 
     category = models.CharField(max_length=100)

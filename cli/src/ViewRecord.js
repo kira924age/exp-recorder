@@ -57,8 +57,8 @@ class ShowMaterialTable extends Component {
       columns={this.state.columns}
       data={this.state.data}
       options={{
-        pageSize: 5,
-        pageSizeOptions: [5, 20, 50],
+        pageSize: 10,
+        pageSizeOptions: [10, 30, 90],
         paginationType: "stepped",
       }}
     />
@@ -69,9 +69,7 @@ class ShowMaterialTable extends Component {
 class ViewRecord extends Component {
   render() {
     return (
-      <div>
-        <ResponsiveDrawer element={ <ShowMaterialTable /> } />
-      </div>
+      <ResponsiveDrawer element={ <ShowMaterialTable /> } />
     );
   }
 }

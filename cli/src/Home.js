@@ -7,9 +7,7 @@ const element = (
     Welcome to exp-recoder!
     <br /> 
     You can record data of expense.
-    <h1> Hello </h1>
     <h2> Hello </h2>
-    <h3> Hello </h3>
   </div>
 );
 
@@ -17,9 +15,7 @@ const element = (
 class Home extends Component {
   render() {
     return (
-      <div>
-        <ResponsiveDrawer element={element} />
-      </div>
+      <ResponsiveDrawer element={element} />
     );
   }
 }

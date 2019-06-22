@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 REST_FRAMEWORK = {
-    'DATETIME_FORMAT': "%Y/%m/%d",
+    'DATETIME_FORMAT': "%Y-%m-%d"
 }
 
 # Quick-start development settings - unsuitable for production
