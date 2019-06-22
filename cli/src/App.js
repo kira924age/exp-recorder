@@ -10,12 +10,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Route exact path='/' component={Home} />
-          <Route path='/resister' component={AddRecord} />
-          <Route path='/record' component={ViewRecord} />
-          <Route path='/detail/:id(\d+)' component={DetailRecord} />
-        </div>
+        <Route exact path='/' component={Home} />
+        <Route path='/resister' component={AddRecord} />
+        <Route path='/record' component={ViewRecord} />
+        <Route path='/detail/:id(\d+)' component={DetailRecord} />
       </BrowserRouter>
     );
   }

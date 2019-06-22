@@ -53,7 +53,6 @@ const styles = theme => ({
   },
 });
 
-
 class ResponsiveDrawer extends React.Component {
   state = {
     mobileOpen: false,
@@ -64,10 +63,10 @@ class ResponsiveDrawer extends React.Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes, } = this.props;
     const drawer = (
       <div>
-        <div style={{ margin : 8 }}>
+        <div style={{ margin : 7 }}>
           <Typography variant="h5" style={{ color: "gray" }}>
             exp-recorder
           </Typography>
@@ -158,7 +157,7 @@ class ResponsiveDrawer extends React.Component {
         </nav>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Typography paragraph>
+          <Typography component={'span'} paragraph>
             { this.props.element }
           </Typography>
         </main>

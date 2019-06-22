@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ResponsiveDrawer from './ResponsiveDrawer'
 
-
 const element = (
   <div>
     Welcome to exp-recoder!

@@ -5,14 +5,13 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom'
 
-// todo: validation
 class InputForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       redirectFlag: false,
       nameProduct: '',
-      price: null,
+      price: '',
       category: '',
     };
 
